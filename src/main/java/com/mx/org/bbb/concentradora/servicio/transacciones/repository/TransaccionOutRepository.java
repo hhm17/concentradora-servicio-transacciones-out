@@ -1,5 +1,7 @@
 package com.mx.org.bbb.concentradora.servicio.transacciones.repository;
 
+import java.util.List;
+
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -11,6 +13,6 @@ import com.mx.org.bbb.concentradora.servicio.transacciones.models.entity.Transac
 public interface TransaccionOutRepository extends PagingAndSortingRepository<TransaccionOut, Long> {
 
 	@RestResource(path = "buscar-folio")
-	public TransaccionOut findByFolio(@Param("folio") String folio);
+	public List<TransaccionOut> findByFolio(@Param("folio") String folio);
 
 }
